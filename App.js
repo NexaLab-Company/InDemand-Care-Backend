@@ -1,6 +1,13 @@
 const express  = require("express");
 const app = express();
+
+
+
+
+
 const cors= require("cors");
+require('dotenv').config()
+
 
 
 
@@ -19,21 +26,31 @@ require("./db/DBConnection");
 
 
 
-app.use
-(
-    cors
-    (
-        {
-            origin: '*',
-        }
-    )
-)
+
+
+
+const corsOptions = {
+
+    origin: 'http://localhost:3000',
+}
+
+
+
+
+
+
+
+app.use( cors( corsOptions ) );
+
+
 
 
 
 
 
 app.use( express.json() );
+
+
 
 
 
@@ -73,6 +90,7 @@ app.get( "/hello" , ( req , res ) => {
 
 
 } )
+
 
 
 
