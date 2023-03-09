@@ -6,6 +6,7 @@ const GenericResponse = require("../dto/GenericResponse");
 module.exports = {
 
 
+
     getAllUsers : async ( req , res ) => {
 
         db.query("select * from users", (error, result) => {
@@ -27,4 +28,7 @@ module.exports = {
 
         })
     }
+
+
+
 }
