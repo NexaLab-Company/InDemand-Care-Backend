@@ -82,9 +82,9 @@ module.exports = {
 
                     else {
 
-                        resolve(result[0].expenseOfCurrentYear);
+                        resolve( result[0] == undefined ? null : result[0].expenseOfCurrentYear );
                     }
-                    
+
 
                 }
             )

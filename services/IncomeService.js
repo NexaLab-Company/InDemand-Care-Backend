@@ -37,7 +37,7 @@ module.exports = {
 
                     else {
 
-                        resolve(result[0].incomeOfCurrentYear);
+                        resolve( result[0] == undefined ? null : result[0].incomeOfCurrentYear );
 
                     }
 
@@ -87,7 +87,7 @@ module.exports = {
                     return new GenericResponse("Saved Successfully", result);
                 }
 
-                
+
 
             })
 
