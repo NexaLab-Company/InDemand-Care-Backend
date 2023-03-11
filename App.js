@@ -104,21 +104,7 @@ app.use(passport.session())
 
 
 const userRouter = require('./routes/UserRouter');
-
-
-
-
-
-
-
-app.use('/user', userRouter);
-
-
-
-
-
-
-
+const dashboardRouter = require('./routes/DashboardRouter')
 
 
 
@@ -131,8 +117,23 @@ function isAuthenticated(req, res, next) {
         return next();
     }
 
-    res.redirect('/login');
+    res.send('not authenticated');
 }
+
+
+
+app.use('/user', userRouter);
+
+app.use('/dashboard',dashboardRouter)
+
+
+
+
+
+
+
+
+
 
 
 
