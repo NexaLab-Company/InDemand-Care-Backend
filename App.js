@@ -58,6 +58,22 @@ app.use( express.json() );
 
 
 
+// *****************************     Scheular Config                **********************************
+
+
+
+
+require("./schedulars/IncomeExpenseSchedular")
+
+
+
+
+
+
+
+
+
+
 
 // *************************     All Routes         *************************************
 
@@ -66,6 +82,7 @@ app.use( express.json() );
 
 
 const testRouter = require("./routes/TestRouter");
+const dashboardRouter = require("./routes/DashboardRouter");
 
 
 
@@ -76,6 +93,7 @@ const testRouter = require("./routes/TestRouter");
 
 
 app.use( "" , testRouter );
+app.use( "" , dashboardRouter );
 
 
 

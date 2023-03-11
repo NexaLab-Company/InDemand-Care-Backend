@@ -9,7 +9,7 @@ module.exports = {
 
     getAllUsers : async ( req , res ) => {
 
-        db.query("select * from users", (error, result) => {
+        db.query("select * from users", ( error , result) => {
 
 
             if (error) 
