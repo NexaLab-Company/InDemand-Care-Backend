@@ -19,6 +19,7 @@ router.post('/register', UserController.signUp );
 
 
 
+
 router.post('/login', passport.authenticate( 'local' , {
 
 
@@ -35,4 +36,5 @@ router.post('/login', passport.authenticate( 'local' , {
 
 
 
-module.exports = router
+
+module.exports = router;
