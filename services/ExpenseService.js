@@ -63,7 +63,7 @@ module.exports = {
 
 
 
-            db.query("SELECT id , exp.expense as expenseOfCurrentYear , month , year FROM expense exp where exp.year = 2023 order by exp.id desc limit 1",
+            db.query("SELECT MAX(id) as id , exp.expense as expenseOfCurrentYear , month , year FROM expense exp where exp.year = 2023 group by exp.month order by exp.id desc ",
 
 
 
@@ -82,7 +82,7 @@ module.exports = {
 
                     else {
 
-                        resolve( result[0] == undefined ? null : result[0].expenseOfCurrentYear );
+                        resolve( result[0] == undefined ? null : result );
                     }
 
 

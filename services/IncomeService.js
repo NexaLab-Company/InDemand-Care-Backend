@@ -18,7 +18,7 @@ module.exports = {
 
 
 
-            db.query("SELECT id , inc.income as incomeOfCurrentYear , month , year FROM income inc where inc.year = 2023 order by inc.id desc limit 1 ",
+            db.query("SELECT MAX(id) as id , inc.income as incomeOfCurrentYear , month , year FROM income inc where inc.year = 2023 group by inc.month order by inc.id desc ",
 
 
 
@@ -37,7 +37,7 @@ module.exports = {
 
                     else {
 
-                        resolve( result[0] == undefined ? null : result[0].incomeOfCurrentYear );
+                        resolve( result[0] == undefined ? null : result );
 
                     }
 

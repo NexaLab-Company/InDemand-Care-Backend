@@ -13,12 +13,15 @@ module.exports = {
 
     
 
+
     getIncomeAndExpenseOfCurrentYear : async ( req , res ) => {
         
 
+        
        const incomeOfCurrentYear =  await  IncomeService.getIncomeOfCurrentYear( req , res );
        const expenseOfCurrentYear = await  ExpenseService.getExpenseOfCurrentYear( req , res );
        
+
        
        return res.send( new GenericResponse("Income And Expense of current year" ,
        new IncomeAndExpenseDto( incomeOfCurrentYear, expenseOfCurrentYear ) 
