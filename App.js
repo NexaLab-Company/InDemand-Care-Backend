@@ -68,9 +68,18 @@ function isAuthenticated(req, res, next) {
 }
 
 app.use('/user', userRouter)
+
+
+
 app.get('/dashboard', isAuthenticated, function (req, res) {
+
+
     var userRole = ''
-    switch (req.user.role) {
+
+
+    switch (req.user.role) 
+    
+    {
         case 1:
             userRole = "super admin"
             break;
@@ -90,12 +99,22 @@ app.get('/dashboard', isAuthenticated, function (req, res) {
         default:
             break;
     }
+
     res.send(`Welcome ${req.user.name} you are a  ${userRole}`);
 });
-app.get('/logout', (req, res)=> {
+
+
+
+
+
+app.get('/logout', (req, res) => {
+
+
     req.logout();
     res.redirect('/login');
-  });
+
+
+});
 
 
 

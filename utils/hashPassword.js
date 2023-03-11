@@ -1,20 +1,33 @@
 const bcrypt = require('bcrypt');
 
 
-function hashPass(password,cb){
+function hashPass( password , cb ) {
 
-    bcrypt.genSalt(10, (error,salt)=>{
-        if (error){
+
+    bcrypt.genSalt( 10 ,  ( error , salt ) => {
+
+
+        if (error)
+        {
 
             cb (null,error)
 
-        }else{
+        }
+        
+        else
+        {
+
             bcrypt.hash(password, salt, (error, hash) => {
-                if (error){
+                if (error)
+                
+                {
 
                     cb (null,error)
 
-                }else{
+                }
+                
+                else
+                {
                     cb (hash,null)
                 }
 
