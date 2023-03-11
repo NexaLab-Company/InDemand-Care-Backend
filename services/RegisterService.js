@@ -1,7 +1,22 @@
-const { hash } = require("bcrypt");
 const db = require("../db/DBConnection");
 const GenericResponse = require("../dto/GenericResponse");
-const hashPass = require('../utils/hashPassword')
+
+
+
+
+
+
+// ********************            Hash Password Util         **********************************
+
+
+const hashPass = require('../utils/hashPassword');
+
+
+
+
+
+
+
 
 
 module.exports = {

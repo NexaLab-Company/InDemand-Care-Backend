@@ -14,10 +14,13 @@ function hashPass( password , cb ) {
 
         }
         
+
         else
         {
 
             bcrypt.hash(password, salt, (error, hash) => {
+
+
                 if (error)
                 
                 {
@@ -25,12 +28,15 @@ function hashPass( password , cb ) {
                     cb (null,error)
 
                 }
+
                 
                 else
                 {
                     cb (hash,null)
                 }
 
+
+                
             })
 
         }
@@ -39,5 +45,7 @@ function hashPass( password , cb ) {
 }
 
 
-module.exports = hashPass
+
+
+module.exports = hashPass;
 

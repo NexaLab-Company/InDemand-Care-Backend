@@ -1,6 +1,19 @@
 const registerService = require('../services/RegisterService')
 
-module.exports = async (req, res) => {
 
-    registerService(req,res)
+
+
+
+module.exports = {
+
+
+
+    signUp: async (req, res) => {
+
+        registerService.saveUser(req, res);
+
+    }
+
+
+    
 }
