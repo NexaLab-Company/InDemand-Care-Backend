@@ -1,7 +1,13 @@
 const bcrypt = require('bcrypt');
 
 
+
+
+
 function hashPass( password , cb ) {
+
+
+
 
 
     bcrypt.genSalt( 10 ,  ( error , salt ) => {
@@ -18,7 +24,7 @@ function hashPass( password , cb ) {
         else
         {
 
-            bcrypt.hash(password, salt, (error, hash) => {
+            bcrypt.hash( password , salt , ( error , hash ) => {
 
 
                 if (error)
@@ -36,7 +42,7 @@ function hashPass( password , cb ) {
                 }
 
 
-                
+
             })
 
         }

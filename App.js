@@ -60,7 +60,11 @@ app.use(express.json());
 
 
 
+
+
 app.use(express.urlencoded({ extended: true }));
+
+
 
 
 
@@ -77,8 +81,12 @@ app.use(session({
 
 
 
+
+
 app.use(passport.initialize())
 app.use(passport.session())
+
+
 
 
 
@@ -93,8 +101,20 @@ app.use(passport.session())
 
 
 
-const testRouter = require("./routes/TestRouter");
-const userRouter = require('./routes/UserRouter')
+
+
+const userRouter = require('./routes/UserRouter');
+
+
+
+
+
+
+
+app.use('/user', userRouter);
+
+
+
 
 
 
@@ -114,7 +134,10 @@ function isAuthenticated(req, res, next) {
     res.redirect('/login');
 }
 
-app.use('/user', userRouter)
+
+
+
+
 
 
 
@@ -154,6 +177,10 @@ app.get('/dashboard', isAuthenticated, function (req, res) {
 
 
 
+
+
+
+
 app.get('/logout', (req, res) => {
 
 
@@ -162,6 +189,9 @@ app.get('/logout', (req, res) => {
 
 
 });
+
+
+
 
 
 

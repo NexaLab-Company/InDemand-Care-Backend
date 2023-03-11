@@ -5,24 +5,28 @@ const router = express.Router();
 
 
 
-const loginController = require('../controllers/loginController');
-const registerController = require('../controllers/registerController');
+const UserController = require('../controllers/UserController');
 
 
 
 
 
 
-router.post('/register', registerController.signUp );
+router.post('/register', UserController.signUp );
 
 
 
 
 
-router.post('/login', passport.authenticate('local', { 
+
+router.post('/login', passport.authenticate( 'local' , {
+
+
     successRedirect: '/dashboard',
     failureRedirect: '/login',
     failureFlash: true 
+
+
   }));
 
 
