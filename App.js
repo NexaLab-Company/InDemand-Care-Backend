@@ -1,26 +1,47 @@
 const express = require("express");
 const app = express();
-const session = require('express-session');
-var passport = require('passport');
 const cors = require("cors");
 require('dotenv').config()
+
+
+
+
+
+
+
+
+
+// **********************             Passport Config                   ***********************************
+
+
+
+const session = require('express-session');
+
+
+var passport = require('passport');
+
+
+
 require('./config/passportConfig')(passport)
+
+
+
+
+
+
+
 
 
 //    ****************************      Database Connected         ****************************
 
+
+
+
 require("./db/DBConnection");
-// const db = require('./db/DBConnection')
 
 
-// const query = 'SELECT * FROM users WHERE email = ? ';
 
-// db.query(query, ["anas@gmail.com"], (error, results) => {
-//     if (error){
-//     } else {
-//         console.log(results[0].role);
-//     }
-// })
+
 
 
 const corsOptions = {
@@ -28,17 +49,38 @@ const corsOptions = {
     origin: 'http://localhost:3000',
 }
 
+
+
+
+
 app.use(cors(corsOptions));
 app.use(express.json());
+
+
+
+
+
 app.use(express.urlencoded({ extended: true }));
+
+
+
+
+
 app.use(session({
     secret: "somesadad",
     resave: false,
     saveUninitialized: true,
 
-}))
+}));
+
+
+
+
+
 app.use(passport.initialize())
 app.use(passport.session())
+
+
 
 
 
